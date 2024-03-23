@@ -17,7 +17,7 @@ if (head == NULL)
 return (0);
 }
 
-while((*current).next != NULL)
+while ((*current).next != NULL)
 {
 sum += (*current).n;
 current = current->next;
