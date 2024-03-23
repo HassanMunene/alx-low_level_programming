@@ -1,4 +1,5 @@
 #include "lists.h"
+#include <stdio.h>
 
 /**
  * get_dnodeint_at_index - get a node at a specific index
@@ -9,24 +10,31 @@
  */
 dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 {
-dlistint_t *current;
-dlistint_t *nodeAddr = NULL;
-unsigned int idx = 0;
+    dlistint_t *current;
+    unsigned int idx = 0;
+    unsigned int i;
+    
+    current = head;
 
-current = head;
-
+    for (i = 0; current->next != NULL; i++)
+    {
+        current = current->next;
+    }
+    current = head;
+    printf("the number of nodes: %d\n", i);
+    if (i < index)
+    {
+        printf("yooo");
+        return (NULL);
+    }
     while (current->next != NULL)
     {
         idx += 1;
         current = current->next;
         if (idx == index)
         {
-            nodeAddr = current;
+            head = current;
         }
     }
-    if (nodeAddr == NULL)
-    {
-        return NULL;
-    }
-    return (nodeAddr);
+    return (head);
 }
