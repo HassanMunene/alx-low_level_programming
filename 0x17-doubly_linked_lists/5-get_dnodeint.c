@@ -16,13 +16,12 @@ dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
     
     current = head;
 
-    for (i = 0; current->next != NULL; i++)
+    for (i = 1; current->next != NULL; i++)
     {
         current = current->next;
     }
     current = head;
-    printf("the number of nodes: %d\n", i);
-    if (i < index)
+    if (index > (i - 1))
     {
         printf("yooo");
         return (NULL);
