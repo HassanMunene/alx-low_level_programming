@@ -10,30 +10,38 @@
  */
 dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 {
-    dlistint_t *current;
-    unsigned int idx = 0;
-    unsigned int i;
-    
-    current = head;
+dlistint_t *current;
+unsigned int idx = 0;
+unsigned int i;
 
-    for (i = 1; current->next != NULL; i++)
-    {
-        current = current->next;
-    }
-    current = head;
-    if (index > (i - 1))
-    {
-        printf("yooo");
-        return (NULL);
-    }
-    while (current->next != NULL)
-    {
-        idx += 1;
-        current = current->next;
-        if (idx == index)
-        {
-            head = current;
-        }
-    }
-    return (head);
+current = head;
+if (head == NULL)
+{
+return (NULL);
+}
+if (index == 0)
+{
+return (head);
+}
+
+for (i = 1; current->next != NULL; i++)
+{
+current = current->next;
+}
+current = head;
+if (index > (i - 1))
+{
+printf("yooo");
+return (NULL);
+}
+while (current->next != NULL)
+{
+idx += 1;
+current = current->next;
+if (idx == index)
+{
+head = current;
+}
+}
+return (head);
 }
