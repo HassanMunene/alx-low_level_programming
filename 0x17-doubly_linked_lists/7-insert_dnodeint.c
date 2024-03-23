@@ -26,14 +26,19 @@ return (NULL);
 newNode->n = n;
 current = *h;
 
+if (*h == NULL)
+{
+return (NULL);
+}
+
 if (idx == 0)
 {
-    temp2 = current;
-    (*temp2).prev = newNode;
-    (*newNode).next = temp2;
-    (*newNode).prev = NULL;
-    *h = newNode;
-    return (newNode);
+temp2 = current;
+(*temp2).prev = newNode;
+(*newNode).next = temp2;
+(*newNode).prev = NULL;
+*h = newNode;
+return (newNode);
 }
 
 for (index = 0; (*current).next != NULL; index++)
