@@ -10,19 +10,23 @@
 dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 {
 dlistint_t *current;
-dlistint_t *nodeAddr;
+dlistint_t *nodeAddr = NULL;
 unsigned int idx = 0;
 
 current = head;
 
-while (current->next != NULL)
-{
-idx += 1;
-current = current->next;
-if (idx == index)
-{
-nodeAddr = current;
-}
-}
-return (nodeAddr);
+    while (current->next != NULL)
+    {
+        idx += 1;
+        current = current->next;
+        if (idx == index)
+        {
+            nodeAddr = current;
+        }
+    }
+    if (nodeAddr == NULL)
+    {
+        return NULL;
+    }
+    return (nodeAddr);
 }
