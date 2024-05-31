@@ -13,13 +13,13 @@ hash_node_t *temp_ht;
 
 if (!ht || !key || !strlen(key) || !ht->array || !ht->size)
 {
-    return (NULL);
+return (NULL);
 }
 index = key_index((unsigned char *)key, ht->size);
 temp_ht = ht->array[index];
 if (temp_ht == NULL)
 {
-    return (NULL);
+return (NULL);
 }
 for (; temp_ht != NULL; temp_ht = temp_ht->next)
 {
