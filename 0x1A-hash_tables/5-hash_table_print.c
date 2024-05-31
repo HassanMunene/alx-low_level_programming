@@ -20,7 +20,7 @@ for (index = 0, end = 1; index < ht->size; index++)
 {
 for (temp = ht->array[index]; temp != NULL; temp = temp->next)
 {
-printf("%s'%s': '%s'", end == 1 ? "" : ",", temp->key, temp->value);
+printf("%s'%s': '%s'", end == 1 ? "" : ", ", temp->key, temp->value);
 end = 0;
 }
 }
