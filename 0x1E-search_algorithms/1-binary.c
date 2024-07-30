@@ -26,7 +26,7 @@ printf("\n");
 }
 
 /**
- * binary_search: the function to do binary_search
+ * binary_search: the function to do th searching by dividing
  * @array: array to be searched
  * @size: size of the array
  * @value: value being searched in the array
